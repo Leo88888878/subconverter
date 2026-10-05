@@ -94,6 +94,8 @@ export function toClash(nodes: ProxyNode[]): string {
         p.password = n.password;
         p.sni = n.sni || n.server;
         p.tls = true;
+        if (n.alpn) p.alpn = [n.alpn];
+        if (n.pinSHA256) p['pin-sha256'] = n.pinSHA256;
         p['skip-cert-verify'] = n.insecure || false;
         p.udp = true;
         break;
