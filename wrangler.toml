@@ -1,0 +1,18 @@
+name = "subconverter"
+main = "src/worker/index.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+
+# KV namespace ID — replace with your own (Cloudflare Dashboard > Workers and Pages > KV)
+# Forks: set the KV_ID secret in GitHub repo settings, or create your own KV namespace
+[[kv_namespaces]]
+binding = "SHORT_LINKS"
+id = "9d1b7952a97b413fb6616acbb043afea"
+
+[observability]
+enabled = true
+head_sampling_rate = 1
