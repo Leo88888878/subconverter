@@ -25,6 +25,7 @@ export interface ProxyNode {
   sni2?: string;
   //通用
   alpn?: string;
+  pinSHA256?: string;
   fingerprint?: string;
   insecure?: boolean;
   ssr?: {
